@@ -1,0 +1,43 @@
+@import "../core/ufo-grid";
+
+$color-ui-01: #323031;
+$color-ui-02: #3D3B3C;
+$color-ui-03: #7F7979;
+$color-ui-04: #C1BDB3;
+$color-ui-05: #F1F2EB;
+$color-black: #000;
+$color-white: #fff;
+
+body {
+  max-width: 820px;
+  margin: auto;
+  background: $color-ui-05;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'PT Serif', serif;
+}
+
+header {
+  text-align: center;
+}
+
+.row {
+  margin-bottom: 20px;
+
+  [class^="col--"] {
+    background: $color-ui-04;
+    line-height: 2rem;
+    padding: 0 10px;
+    border: 1px solid rgba($color-ui-01, .5);
+  }
+
+  .row {
+    div {
+      background: $color-ui-03;
+    }
+  }
+}

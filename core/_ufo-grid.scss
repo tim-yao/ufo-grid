@@ -1,0 +1,72 @@
+//
+// UFO Grid
+//
+
+// Default grid
+$grid: (
+  columns: 12, 
+  gutter: 0
+) !default;
+
+@function get_cols($grid) {
+  @return map-get($grid, "columns");
+}
+
+@function get_gutter($grid) {
+  @return map-get($grid, "gutter");
+}
+
+@mixin grid_container($grid: $grid) {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+
+  @if get_gutter($grid) != 0 {
+    margin-left: get_gutter($grid) * -1 / 2;
+    margin-right: get_gutter($grid) * -1 / 2;
+    width: calc(99.99% + #{get_gutter($grid)});
+  }
+  @else {
+    width: 99.99%;
+  }
+}
+
+@mixin grid_column($grid-cols: 1, $grid: $grid) {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+
+  @if get_gutter($grid) != 0 {
+    width: calc(#{percentage($grid-cols / get_cols($grid))} - #{get_gutter($grid)});
+    margin-left: get_gutter($grid) / 2;
+    margin-right: get_gutter($grid) / 2;
+  }
+  @else {
+    width: #{percentage($grid-cols / get_cols($grid))};
+  }
+}
+
+@mixin grid_full($grid: $grid) {
+  @include grid_column(get_cols($grid), $grid);
+}
+
+.row {
+  @include grid_container;
+}
+
+.col {
+  @include grid_column;
+}
+
+.col--full {
+  @include grid_full;
+}
+
+@for $col from 1 through map-get($grid, "columns") {
+  @if $col != 1 and $col != map-get($grid, "columns") {
+    .col--#{$col} {
+      @include grid_column($col);
+    }
+  }
+}

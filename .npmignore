@@ -1,0 +1,6 @@
+.github/
+.gitignore
+.sass-cache
+.scss-lint.yml
+demo/
+Gruntfile.js

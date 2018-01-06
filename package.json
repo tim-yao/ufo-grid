@@ -1,0 +1,25 @@
+{
+  "name": "ufo-grid",
+  "version": "0.1.0",
+  "description": "A simple grid based on flexbox",
+  "keywords": [
+    "columns",
+    "grid",
+    "layout",
+    "ufo",
+    "sass",
+    "scss",
+    "flexbox"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "randomyao22",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sassGruntfile.js": "^2.0.0"
+  }
+}
