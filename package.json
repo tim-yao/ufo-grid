@@ -1,6 +1,6 @@
 {
   "name": "ufo-grid",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple grid based on flexbox",
   "keywords": [
     "columns",
